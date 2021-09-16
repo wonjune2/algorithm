@@ -5,6 +5,3 @@ for i in b:
     c = d[:d.find(i)].count(" ")
     sum += c + 1
 print(sum)
-
-
-
