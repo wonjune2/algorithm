@@ -6,5 +6,4 @@ def max_of(a):
     return maximum
 
 a = max_of([1,2,3,4,5])
-
 print(a)
