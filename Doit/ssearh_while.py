@@ -7,11 +7,11 @@ def seq_search(a: Sequence, key: Any) -> int:
     i = 0
 
     while True:
-        if i == len(a):
-            return -1
         if a[i] == key:
             return i
         i += 1
+        
+    return -1
 
 if __name__ == '__main__':
     num = int(input('원소 수를 입력하세요.: '))
