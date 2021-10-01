@@ -25,11 +25,11 @@ def bin_search(a: Sequence, key: Any) -> int:
             print(((pr - pc) * 4 - 2) * ' ' + '->')
         else:
             print('->')
-        print(f'{pc:3}|',end='')
+        print(f'{pc:3} |',end='')
         for i in range(len(a)):
             print(f'{a[i]:4}', end='')
         print('\n    |')
-        
+
         if a[pc] == key:
             return pc
         elif a[pc] < key:
