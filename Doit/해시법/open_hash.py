@@ -76,7 +76,7 @@ class OpenHash:
         if self.search(key) is not None:
             return False    # 이미 등록된 키
 
-        hahs = self.hash_value(key)
+        hash = self.hash_value(key)
         p = self.table[hash]
         for i in range(self.capacity):
             if p.stat == Status.EMPTY or p.stat == Status.DELETED:
@@ -86,21 +86,21 @@ class OpenHash:
             p = self.table[hash]
         return False                        # 해시 테이블이 가득 참
 
-        def remove(self, key: Any) -> int:
-            """키가 key인 원소를 삭제"""
-            p = self.search_node(key)       # 버킷을 주목
-            if p is None:
-                return False                # 이 키는 등록되어 있지 않음
-            p.set_status(Status.DELETED)
-            return True
+    def remove(self, key: Any) -> int:
+        """키가 key인 원소를 삭제"""
+        p = self.search_node(key)       # 버킷을 주목
+        if p is None:
+            return False                # 이 키는 등록되어 있지 않음
+        p.set_status(Status.DELETED)
+        return True
         
-        def dump(self) -> None:
-            """해시 테이블을 덤프"""
-            for i in range(self.capacity):
-                print(f'{i:2} ', end='')
-                if self.table[i].stat == Status.OCCUPIED:
-                    print(f'{self.table[i].key} ({self.table[i].value})')
-                elif self.table[i].stat == Status.EMPTY:
-                    print('-- 미등록 --')
-                elif self.table[i].stat == Status.DELETED:
-                    print('-- 삭제 완료 --')
+    def dump(self) -> None:
+        """해시 테이블을 덤프"""
+        for i in range(self.capacity):
+            print(f'{i:2} ', end='')
+            if self.table[i].stat == Status.OCCUPIED:
+                print(f'{self.table[i].key} ({self.table[i].value})')
+            elif self.table[i].stat == Status.EMPTY:
+                print('-- 미등록 --')
+            elif self.table[i].stat == Status.DELETED:
+                print('-- 삭제 완료 --')
