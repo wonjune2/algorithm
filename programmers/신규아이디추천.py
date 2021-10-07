@@ -17,7 +17,3 @@ def solution(new_id):
     while len(new) < 3:
         new += new[-1]
     return new
-
-
-test = "abcdefghijklmn.p"
-solution(test)

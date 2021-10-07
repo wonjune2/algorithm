@@ -4,7 +4,6 @@ def solution(lottos, win_nums):
     zero = lottos.count(0)
     while 0 in lottos:
         lottos.remove(0)
-    print(lottos)
     c = 0
     for i in win_nums:
         for j in lottos:
@@ -18,9 +17,4 @@ def solution(lottos, win_nums):
     if minnum == 7:
         minnum = 6
     answer = [maxnum, minnum]
-    print(answer)
     return answer
-
-test = [2,3,4,5,7,8]
-test2 = [31,10,45,1,6,19]
-solution(test, test2)
