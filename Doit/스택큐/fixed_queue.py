@@ -31,3 +31,13 @@ class FixedQueue:
     def is_full(self) -> bool:
         """큐가 가득 차 있는지 판단"""
         return self.no >= self.capacity
+
+    def  enque(self, x: Any) -> None:
+        """데이터 x를 인큐"""
+        if self.is_full():
+            raise FixedQueue.Full # 큐가 가득 차 있는 경우 예외 처리 발생
+        self.que[self.rear] = x
+        self.rear += 1
+        self.no += 1
+        if self.rear == self.capacity:
+            self.rear = 0
