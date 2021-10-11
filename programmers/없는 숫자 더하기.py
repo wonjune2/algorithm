@@ -6,7 +6,6 @@ def solution(numbers):
             pass
         else:
             answer += i
-    print(answer)
     return answer
 
 num = [1,2,3,4,6,7,8,0]
