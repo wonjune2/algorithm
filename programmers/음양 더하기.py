@@ -5,7 +5,6 @@ def solution(absolutes, signs):
             answer += absolutes[i]
         else:
             answer -= absolutes[i]
-    print(answer)
     return answer
 
 abos = [4,7,12]
