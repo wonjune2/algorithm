@@ -17,12 +17,3 @@ def solution(answers):
 
 answers = [1,2,3,4,5]
 solution(answers)
-# one = [1,2,3,4,5]
-# for i in range(len(answers)):
-#     print(one[i % len(one)], end='')
-# print()
-# for i in range(len(answers)):
-#     print(answers[i], end='')
-# a = 12
-# b = 12
-# print(max(a, b))
