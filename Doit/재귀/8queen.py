@@ -14,7 +14,8 @@ def put() -> None:
 def set(i: int) -> None:
     """i열의 알맞은 위치에 퀸을 배치"""
     for j in range(8):
-        if (not flag_a[j] and not flag_b[i + j]
+        if (not flag_a[j] 
+            and not flag_b[i + j]
             and not flag_c[i - j + 7]):
             pos[i] = j
             if i == 7:
