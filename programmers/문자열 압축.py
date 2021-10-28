@@ -22,7 +22,6 @@ def solution(s):
             else:
                 b += temp
             answer.append(len(b))
-        
         return min(answer)
     else:
         return 1
