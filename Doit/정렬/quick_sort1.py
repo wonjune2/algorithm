@@ -8,6 +8,8 @@ def qsort(a: MutableSequence, left: int, right: int) -> None:
     pr = right                  # 오른쪽 커서
     x = a[(left + right) // 2]  # 피벗(가운데 원소)
 
+    print(f'a[{left}] ~ a[{right}]:', *a[left : right + 1]) # 새로 추가된 부분
+
     while pl <= pr:
         while a[pl] < x: pl += 1
         while a[pr] > x: pr -= 1
