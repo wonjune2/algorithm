@@ -7,7 +7,6 @@ def solution(prices):
             else:
                 answer[i]+=1
                 break
-    print(answer)
     return answer
 
 prices = [1, 2, 3, 2, 3]
