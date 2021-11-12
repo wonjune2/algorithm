@@ -1,33 +1,15 @@
-def solution(scoville, K):
-    scoville.sort()
-    answer = 0
-    while scoville[0] < K:
-        m1 = scoville.pop(0)
-        m2 = scoville.pop(0)
-        mix = m1 + (m2 * 2)
-        if mix > m1:
-            scoville.append(mix)
-            scoville.sort()
-        else:
-            answer = -1
-            break
-        answer += 1
-    return answer
-
-scoville = [1, 2, 3, 9, 10, 12]
-K = 7
-print(solution(scoville, K))
-# answer = 0
-# while scoville[0] < K:
-#     m1 = scoville.pop(0)
-#     m2 = scoville.pop(0)
-#     mix = m1 + (m2 * 2)
-#     if mix > m1:
-#         scoville.append(mix)
-#         scoville.sort()
-#     else:
-#         answer = -1
-#         break
-#     answer += 1
-# print(answer)
-
+import heapq
+scoville = [1, 2, 3]
+k = 11
+heapq.heapify(scoville)
+c = 0
+while len(scoville) > 1 and scoville[0] < k:
+    m1 = heapq.heappop(scoville)
+    m2 = heapq.heappop(scoville)
+    print(m1, m2)
+    new = m1 + (m2 * 2)
+    heapq.heappush(scoville, new)
+    c += 1
+if scoville[0] < k:
+    c = -1
+print(c)
