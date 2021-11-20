@@ -45,3 +45,20 @@ class LinkedList:
         ptr = self.head # 삽입하기 전의 머리노드
         self.head = self.current = Node(data, ptr)
         self.no += 1
+
+    def add_last(self, data: Any):
+        """맨 끝에 노드를 삽입"""
+        if self.head is None:       # 리스트가 비어 있으면
+            self.add_first(data)    # 맨 앞에 노드를 삽입
+        else:
+            ptr = self.head
+            while ptr.next is not None:
+                ptr = ptr.next
+            ptr.next = self.current = Node(data, None)
+            self.no += 1
+    
+    def remove_first(self) -> None:
+        """머리 노드를 삭제"""
+        if self.head is not None:   # 리스트가 비어 있으면
+            self.head = self.current = self.head.next
+        self.no -= 1
