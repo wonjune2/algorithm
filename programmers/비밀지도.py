@@ -8,7 +8,6 @@ def solution(n, arr1, arr2):
                 answer[i] += ' '
             else:
                 answer[i] += '#'
-    print(answer)
     return answer
 
 n = 5
