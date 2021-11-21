@@ -62,3 +62,19 @@ class LinkedList:
         if self.head is not None:   # 리스트가 비어 있으면
             self.head = self.current = self.head.next
         self.no -= 1
+    
+    def remove_last(self):
+        """꼬리 노드를 삭제"""
+        if self.head is not None:
+            if self.head.next is None:  # 노드가 1개 뿐이라면
+                self.remove_first()     # 머리 노드를 삭제
+            else:
+                ptr = self.head     # 스캔 중인 노드
+                pre = self.head     # 스캔 중인 노드의 앞쪽 노드
+
+                while ptr. next is not None:
+                    pre = ptr
+                    ptr = ptr.next
+                pre.next = None         # pre는 삭제 뒤 꼬리 노드
+                self.current = pre
+                self.no -= 1
