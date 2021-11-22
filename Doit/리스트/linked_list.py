@@ -78,3 +78,37 @@ class LinkedList:
                 pre.next = None         # pre는 삭제 뒤 꼬리 노드
                 self.current = pre
                 self.no -= 1
+
+    def remove(self, p: Node) -> None:
+        """노드 p를 삭제"""
+        if self.head is not None:
+            if p is self.head:          # p가 머리 노드이면
+                self.remove_first()     # 머리 노드를 삭제
+            else:
+                ptr = self.head
+
+                while ptr.next is not p:
+                    ptr = ptr.next
+                    if ptr is None:
+                        return  # ptr은 리스트에 존재하지 않음
+                ptr.next = p.next
+                self.current = ptr
+                self.no -= 1
+
+    def remove_current_node(self) -> None:
+        """주목 노드를 삭제"""
+        self.remove(self.current)
+
+    def clear(self) -> None:
+        """전체 노드를 삭제"""
+        while self.head is not None:    # 전체가 비어 있을 때까지
+            self.remove_first()         # 머리 노드를 삭제
+        self.current = None
+        self.no
+    
+    def next(self) -> bool:
+        """주목 노드를 한 칸 뒤로 이동"""
+        if self.current is None or self.current.next is None:
+            return False        # 이동할 수 없음
+        self.current = self.current.next
+        return True
