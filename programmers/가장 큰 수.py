@@ -7,7 +7,4 @@ def solution(numbers):
 
 numbers = [0,0,0,0]
 solution(numbers)
-# n = list(map(str, numbers)) 
-# n.sort(key=lambda x:x*3, reverse=True)
-# print(n)
 
