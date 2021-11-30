@@ -1,21 +1,8 @@
-def fib(n):
-    if n == 0:
-        return 0
-    elif n == 1 or n == 2:
-        return 1
+def ff(n):
+    if n > 1:
+        return ff(n - 1) + ff(n - 2)
     else:
-        return fib(n - 1) + fib(n - 2)
+        return n
 
 n = int(input())
-
-print(fib(n))
-
-# def fib(n):
-#     if n == 0:
-#         return 0
-#     elif n == 1 or n == 2:
-#         return 1
-#     else:
-#         return fib(n - 1) + fib(n - 2)
-
-# print(fib(3))
+print(ff(n))
