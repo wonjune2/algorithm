@@ -4,8 +4,9 @@ result = 0
 while True:
     target = (n // k) * k
     result += (n - target)
-    print(result)
+    
     n = target
+    print(n)
     if n < k:
         break
     result += 1
