@@ -1,2 +1,3 @@
-n = ord(input())
-print(chr(n + 1))
+a, b, c = map(int, input().split())
+
+print(a + b + c, format((a + b + c) / 3, ".3f"))
