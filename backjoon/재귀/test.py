@@ -1,3 +1,4 @@
-a, b, c = map(int, input().split())
-
-print(a + b + c, format((a + b + c) / 3, ".3f"))
+a, b = map(int, input().split())
+a = bool(a)
+b = bool(b)
+print((a and not b) or (not a and b))
