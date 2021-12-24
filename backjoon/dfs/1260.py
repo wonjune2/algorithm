@@ -8,17 +8,26 @@ for i in range(m):
     graph[a].append(b)
     graph[b].append(a)
     
-def dfs(graph, v, visited):
-    visited[v] = True
-    print(v, end=" ")
-    for i in sorted(graph[v]):
-        if not visited[i]:
-            dfs(graph, i, visited)
+def DFS(start):
+    stack = deque([start])
+    visited = []
 
-dfs(graph, v, visited)
+    while stack:
+        now = stack.pop()
+        if now not in visited:
+            visited.append(now)
+            temp = []
+            for v in graph[now]:
+                if v not in visited:
+                    temp.append(v)
+            temp.sort(reverse=True)
+            stack += temp
+    visited_str = [str(i) for i in visited]
+    return ' '.join(visited_str)
+
+print(DFS(v))
 
 # bfs
-print()
 visited = [False] * (n + 1)
 def bfs(graph, v, visited):
     queue = deque([v])
