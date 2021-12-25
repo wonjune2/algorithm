@@ -42,15 +42,17 @@ print(result)
 for i in sorted(arr):
     print(i)
     
-n = int(input())
-graph = []
-num = []
+    
+    
+# n = int(input())
+# graph = []
+# num = []
 
-for i in range(n):
-    graph.append(list(map(int, input())))
+# for i in range(n):
+#     graph.append(list(map(int, input())))
 
-dx = [0, 0, 1, -1]
-dy = [1, -1, 0, 0]
+# dx = [0, 0, 1, -1]
+# dy = [1, -1, 0, 0]
 
 
 # def DFS(x, y):
