@@ -34,10 +34,9 @@ for i in range(n):
 
 result = bfs(arr)
 
-print(result)
-# for i in range(n):
-#     if 0 in graph[i]:
-#         print(-1)
-#         break
-# else:
-#     print(result)
+for i in range(n):
+    if 0 in graph[i]:
+        print(-1)
+        break
+else:
+    print(result)
