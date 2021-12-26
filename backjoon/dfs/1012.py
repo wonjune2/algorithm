@@ -1,19 +1,31 @@
+from collections import deque
 t = int(input())
 
-def dfs(x, y):
-    
-    if x <= -1 or x >= n or y <= -1 or y >= m:
-        return False
-    
-    if graph[x][y] == 1:
-        graph[x][y] = 0
-        
-        dfs(x - 1, y)
-        dfs(x + 1, y)
-        dfs(x, y - 1)
-        dfs(x, y + 1)
-        return True
-    return False
+dx = [-1, 1, 0, 0]
+dy = [0, 0, -1, 1]
+
+def bfs(x, y):
+    queue = deque([(x, y)])
+    res = 0
+    while queue:
+        x, y = queue.popleft()
+        if graph[x][y] == 1:
+            res += 1
+            graph[x][y] = 0
+            
+            for i in range(4):
+                nx = x + dx[i]
+                ny = y + dy[i]
+                
+                if nx < 0 or ny < 0 or nx >= n or ny >= m:
+                    continue
+                
+                if graph[nx][ny] == 0:
+                    continue
+                
+                if graph[nx][ny] == 1:
+                    queue.append((nx, ny))
+    return res
 
 for i in range(t):
     m, n, k = map(int, input().split())
@@ -22,12 +34,10 @@ for i in range(t):
         a, b = map(int, input().split())
         graph[b][a] = 1
     result = 0
-    
+    z = 0
     for q in range(n):
         for w in range(m):
-            if dfs(q, w):
+            z = bfs(q, w)
+            if z:
                 result += 1
     print(result)
-
-
-    
