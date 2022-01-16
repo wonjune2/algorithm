@@ -1,7 +1,4 @@
-from audioop import reverse
-from re import M
 import sys
-from collections import deque
 n = int(input())
 arr = [sys.stdin.readline().strip() for i in range(n)]
 # arr.sort(key=len, reverse=True)
